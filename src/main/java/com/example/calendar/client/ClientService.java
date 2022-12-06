@@ -27,18 +27,25 @@ public class ClientService {
 
         List<Client> clients = clientRepository.findClientQuery();
         boolean isBookingEmpty = true;
-        if(clients.size() > 0){
-            for(int index =0; index < clients.size(); index++){
-                Client newClient =  clients.get(index);
+        if(client.getFinishOfBooking().isAfter(client.getInitialOfBooking())){
+            if(clients.size() > 0){
+
+                for(int index =0; index < clients.size(); index++){
+                    Client newClient =  clients.get(index);
 
 
-                if(client.getInitialOfBooking().isAfter(newClient.getFinishOfBooking()) || client.getFinishOfBooking().isBefore(newClient.getInitialOfBooking()) ){
-                    isBookingEmpty = true;
-                } else {
-                    isBookingEmpty = false;
-                    break;
+                    if(client.getInitialOfBooking().isAfter(newClient.getFinishOfBooking()) ||
+                            client.getFinishOfBooking().isBefore(newClient.getInitialOfBooking())){
+                        isBookingEmpty = true;
+                    } else {
+                        isBookingEmpty = false;
+                        break;
+                    }
                 }
-        }
+            }
+
+        } else {
+            throw new IllegalStateException("Horário adicionado de forma incorreta");
         }
 
         if(isBookingEmpty == true){

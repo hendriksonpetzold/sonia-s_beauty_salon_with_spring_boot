@@ -15,7 +15,10 @@ import java.time.LocalDateTime;
 public class Client {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
+    private String nameOfClient;
+    private String nameOfAttendant;
+    private String service;
+    private Double price;
     private LocalDateTime initialOfBooking;
     private LocalDateTime finishOfBooking;
 
