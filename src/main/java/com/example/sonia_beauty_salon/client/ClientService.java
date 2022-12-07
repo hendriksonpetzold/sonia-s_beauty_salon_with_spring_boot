@@ -1,15 +1,9 @@
-package com.example.calendar.client;
+package com.example.sonia_beauty_salon.client;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ClientService {
@@ -49,7 +43,6 @@ public class ClientService {
         }
 
         if(isBookingEmpty == true){
-
             System.out.println("ADD COM SUCESSO");
             clientRepository.save(client);
         } else{

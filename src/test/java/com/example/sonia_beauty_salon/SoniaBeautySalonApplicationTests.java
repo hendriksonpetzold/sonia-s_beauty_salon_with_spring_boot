@@ -1,10 +1,10 @@
-package com.example.calendar;
+package com.example.sonia_beauty_salon;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CalendarApplicationTests {
+class SoniaBeautySalonApplicationTests {
 
 	@Test
 	void contextLoads() {

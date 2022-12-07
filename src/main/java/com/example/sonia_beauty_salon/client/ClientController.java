@@ -1,12 +1,8 @@
-package com.example.calendar.client;
+package com.example.sonia_beauty_salon.client;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.List;
 
 @RestController
