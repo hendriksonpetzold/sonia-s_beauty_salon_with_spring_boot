@@ -17,6 +17,14 @@ public class ClientService {
        return clientRepository.findAll();
     }
 
+    public void deleteClientById(Long clientId){
+        boolean exists = clientRepository.existsById(clientId);
+        if(!exists){
+            throw new IllegalStateException("Client nao existe");
+        }
+        clientRepository.deleteById(clientId);
+    }
+
     public void addNewClient(Client client) {
 
         List<Client> clients = clientRepository.findClientQuery();
@@ -49,11 +57,6 @@ public class ClientService {
             System.out.println("JA TEM ESSE HORARIO");
             throw new IllegalStateException("esse horário ja esta marcado");
         }
-
-
-
-
-
     }
 
 }

@@ -25,4 +25,10 @@ public class ClientController {
     public void addNewClient(@RequestBody Client client){
         clientService.addNewClient(client);
     }
+
+    @DeleteMapping(path = "{clientId}")
+    public void deleteClientById(@PathVariable("clientId") Long clientId){
+        clientService.deleteClientById(clientId);
+    }
+
 }
